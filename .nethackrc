@@ -1,0 +1,6 @@
+OPTIONS=name:Marauder
+OPTIONS=pettype:dog,hilite_pet
+OPTIONS=color
+OPTIONS=!autopickup, DECgraphics, extmenu, showexp, standout, time
+OPTIONS=boulder:O
+

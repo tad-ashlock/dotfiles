@@ -1,0 +1,15 @@
+rudeness 12
+bind l exec i3lock -du -c 000000
+
+warp off
+startup_message off
+set border 0
+
+exec xsetroot -solid "#000000"
+exec xrdb ~/.Xresources
+#exec xkbset bell sticky -twokey latchlock feedback led stickybeep
+#exec xkbset exp 1 =bell =sticky =twokey =latchlock =accessx =feedback =led =stickybeep
+
+# make a screenshot
+alias sshot exec import -window root ~/screenshot-$(date +%F).jpg
+definekey top M-C-Print sshot

@@ -1,0 +1,26 @@
+# Ignore everything
+*
+
+# But not these files...
+!/.aspell.en.prepl
+!/.bashrc
+!/.dmrc
+!/.gitconfig
+!/.gitignore
+!/.mutt/mailcap
+!/.mutt/mutt-colors-solarized-dark-16.muttrc
+!/.mutt/muttrc
+!/.nethackrc
+!/.pentadactylrc
+!/.pwsafe.dat
+!/.ratpoisonrc
+!/.screenrc
+!/.ssh/config
+!/.task
+!/.taskrc
+!/.tmux.conf
+!/.vim
+!/.vimrc
+!/.Xresources
+!/.xscreensaver
+!/.xsession

@@ -1,0 +1,20 @@
+"1.0b6 (created: 2011/03/09 09:25:18)
+
+loadplugins '\.(js|penta)$'
+group user
+set editor='emacsclient -a emacs +&lt;line&gt;:&lt;column&gt; &lt;file&gt;'
+set guioptions=Csn
+set nextpattern='^Next [>»]','^Next','\b[Nn]ext\b',^>$,'^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
+set previouspattern='[<«] Prev$','^[Pp]rev(ious)?','\b[Pp]rev(ious)?\b',^<$,'^(<<|«)$','^(<|«)','(<|«)$'
+command! readlater -javascript (function(d){var z=d.createElement('scr'+'ipt'),b=d.body;try{if(!b)throw(0);d.title='(Saving...)'+d.title;z.setAttribute('src','http://www.instapaper.com/j/q28Yuz6ZB7Dw?u=');b.appendChild(z);}catch(e){alert('Please wait until the page has loaded.');}void(0)})(content.document)
+command! bolt -javascript (function(){var d=document,w=window,u=encodeURIComponent(w.location.href);if(w.location.href.indexOf('.pdf')>0){w.open(w.location.href='https://bo.lt/app/widget?mode=create&view=page&url='+u);}else{w.__m4to=w.setTimeout(function(){w.location.href='https://bo.lt/app/widget/bookmarklet/fallback?url='+encodeURIComponent(w.location.href)+'&p=8f0ead4d173527d21c0c63c42e58df461bed8bf9';},10000);var script=d.createElement('script');script.src='https://bo.lt/app/bookmarklet.js?p=8f0ead4d173527d21c0c63c42e58df461bed8bf9&r='+Math.floor(Math.random() * 100000);script.type='text/javascript';d.body.appendChild(script);}})()
+
+au! DOMLoad 'xkcd.com' -js
+  \ Array.forEach(doc.querySelectorAll("img[title]"), function (img) {
+  \     let div = DOM.fromJSON(["div", {}, ["div", { highlight: "XKCDTitle" }, img.title]], doc);
+  \     img.parentNode.replaceChild(div, img);
+  \     div.insertBefore(img, div.firstChild);
+  \ })
+
+" vim: set ft=pentadactyl:
+
