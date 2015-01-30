@@ -5,9 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -19,6 +19,10 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -65,7 +69,10 @@ xterm*|rxvt*)
     ;;
 esac
 
-alias ls='ls -F --color=always'
+alias ls='ls -F'
+alias ll='ls -lF'
+alias la='ls -A'
+alias lla='ls -AlF'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -76,24 +83,22 @@ if [ -x /usr/bin/dircolors ]; then
     export LS_COLORS=`echo $LS_COLORS | sed 's/ex=[^:]*/ex=00;31/g'`
 
     alias ls='ls -F --color=always'
-    #alias dir='dir --color=always'
-    #alias vdir='vdir --color=always'
+    alias ll='ls -lF --color=always'
+    alias la='ls -A --color=always'
+    alias lla='ls -AlF --color=always'
 
     alias grep='grep --color=always'
     alias fgrep='fgrep --color=always'
     alias egrep='egrep --color=always'
 fi
 
-# some more ls aliases
-alias ll='ls -lF --color=always'
-alias la='ls -A --color=always'
-alias lla='ls -AlF --color=always'
-
 alias less='less -R'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias parallel='parallel --gnu '
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -111,20 +116,40 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PATH=/usr/local/texlive/2011/bin/x86_64-linux:$PATH
-
-export EDITOR=emacsclient
-
-#TODO if [ -f /opt/opensplice/HDE/x86_64.linux2.6/release.com ]; then
-#TODO     . /opt/opensplice/HDE/x86_64.linux2.6/release.com
-#TODO 
-#TODO elif [ -f /opt/opensplice/HDE/x86_64.linux2.6-dev/release.com ]; then
-#TODO     . /opt/opensplice/HDE/x86_64.linux2.6-dev/release.com
-#TODO fi
-
 set -o vi
 
-#TODO if [ ! -d /mnt/caladan/Desktop ] ; then
-#TODO     mount /mnt/caladan &
-#TODO fi
 
+if ip addr show | grep --quiet ' 134\.253\.'
+then  # 134.253 address found
+    cat >~/.gitconfig.local <<EOF
+[user]
+        email = taashlo@sandia.gov
+EOF
+
+    export http_proxy=http://wwwproxy.sandia.gov:80/
+    export https_proxy=https://wwwproxy.sandia.gov:80/
+    export ftp_proxy=ftp://wwwproxy.sandia.gov:80/
+    export no_proxy="localhost,127.0.0.1,.sandia.gov"
+fi
+
+if [ "$HOSTNAME" = arrakis ]; then
+
+    cat >~/.gitconfig.local <<EOF
+[user]
+        email = tad.ashlock@gmail.com
+EOF
+
+    export PATH=/usr/local/texlive/2011/bin/x86_64-linux:$PATH
+
+    export EDITOR=emacsclient
+
+    #TODO if [ -f /opt/opensplice/HDE/x86_64.linux2.6/release.com ]; then
+    #TODO     . /opt/opensplice/HDE/x86_64.linux2.6/release.com
+    #TODO elif [ -f /opt/opensplice/HDE/x86_64.linux2.6-dev/release.com ]; then
+    #TODO     . /opt/opensplice/HDE/x86_64.linux2.6-dev/release.com
+    #TODO fi
+
+    #TODO if [ ! -d /mnt/caladan/Desktop ] ; then
+    #TODO     mount /mnt/caladan &
+    #TODO fi
+fi
