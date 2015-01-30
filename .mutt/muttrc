@@ -1,0 +1,44 @@
+source /etc/Muttrc
+
+set mbox_type=maildir
+set editor="vim"
+
+# I like to see all my mail headers in my editor:
+set edit_headers=yes
+
+# don't wait for sendmail to finish (this runs sendmail in the background)
+set sendmail_wait=-1
+
+# this prevents Mutt from endlessly asking when you quit:
+#     "Move read messages to ~/mbox? ([no]/yes):"
+set move=no
+
+# make the colorscheme by Solarized dark
+source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+
+# automatically view the HTML parts of a message
+auto_view text/html
+
+set timeout=10
+set mail_check=5
+
+# IMAP
+# For IMAP connections use the following settings.
+# Some settings replace those used above for folder and spoolfile.
+# Note that the full mail username is "username@example.com" and
+# the server name is "localhost". If you wanted to connect to a
+# remote server the full URL might be something like:
+#     imap://username@example.com@example.com
+set folder="imaps://taashlo@mail.sandia.gov"
+set spoolfile="+INBOX"
+set mbox="+INBOX"
+set postponed="+Drafts"
+set record="+Sent Items"
+set trash="+Deleted Items"
+set imap_user="taashlo@sandia.gov"
+set from="taashlo@sandia.gov"
+set realname="Tad Ashlock"
+set certificate_file="/etc/ssl/certs/ca-certificates.crt"
+
+set smtp_url="smtp://taashlo@mail.sandia.gov:587"
+set smtp_authenticators="login"
