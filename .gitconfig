@@ -2,9 +2,11 @@
 	name = Tad Ashlock
 [color]
 	ui = true
+[core]
+	editor = emacsclient -t -a=vim
 [push]
 	default = simple
 [alias]
-        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
 [include]
-        path = ~/.gitconfig.local
+	path = ~/.gitconfig.local

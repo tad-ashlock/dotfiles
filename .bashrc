@@ -13,8 +13,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=1000000
+HISTFILESIZE=1000000000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -130,6 +130,11 @@ EOF
     export https_proxy=https://wwwproxy.sandia.gov:80/
     export ftp_proxy=ftp://wwwproxy.sandia.gov:80/
     export no_proxy="localhost,127.0.0.1,.sandia.gov"
+fi
+
+if command -v module > /dev/null; then
+    module restore 2>/dev/null
+    module list
 fi
 
 if [ "$HOSTNAME" = arrakis ]; then
