@@ -27,3 +27,6 @@
 !/.xscreensaver
 !/.xsession
 !/.zshrc
+!/.zsh/
+!/.zsh/plugins
+!/.zsh/plugins/opp.zsh
