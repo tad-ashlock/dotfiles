@@ -3,7 +3,7 @@
 [color]
 	ui = true
 [core]
-	editor = emacsclient -t -a=vim
+	editor = vim
 [push]
 	default = simple
 [alias]
