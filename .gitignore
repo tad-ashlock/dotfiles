@@ -7,6 +7,7 @@
 !/dict/
 !/dict/en.prepl
 !/dict/en.pws
+!/.dircolors
 !/.dmrc
 !/.gitconfig
 !/.gitignore
