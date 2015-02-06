@@ -4,6 +4,9 @@
 # But not these files...
 !/.aspell.en.prepl
 !/.bashrc
+!/dict/
+!/dict/en.prepl
+!/dict/en.pws
 !/.dmrc
 !/.gitconfig
 !/.gitignore
