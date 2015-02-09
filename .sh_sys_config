@@ -1,0 +1,39 @@
+if ip addr show | grep --quiet ' 134\.253\.'
+then  # 134.253 address found
+    cat >~/.gitconfig.local <<EOF
+[user]
+        email = taashlo@sandia.gov
+EOF
+
+    export http_proxy=http://wwwproxy.sandia.gov:80/
+    export https_proxy=https://wwwproxy.sandia.gov:80/
+    export ftp_proxy=ftp://wwwproxy.sandia.gov:80/
+    export no_proxy="localhost,127.0.0.1,.sandia.gov"
+fi
+
+if command -v module > /dev/null; then
+    module restore 2>/dev/null
+    module list
+fi
+
+if [ "$HOSTNAME" = arrakis ]; then
+
+    cat >~/.gitconfig.local <<EOF
+[user]
+        email = tad.ashlock@gmail.com
+EOF
+
+    export PATH=/usr/local/texlive/2011/bin/x86_64-linux:$PATH
+
+    export EDITOR=emacsclient
+
+    #TODO if [ -f /opt/opensplice/HDE/x86_64.linux2.6/release.com ]; then
+    #TODO     . /opt/opensplice/HDE/x86_64.linux2.6/release.com
+    #TODO elif [ -f /opt/opensplice/HDE/x86_64.linux2.6-dev/release.com ]; then
+    #TODO     . /opt/opensplice/HDE/x86_64.linux2.6-dev/release.com
+    #TODO fi
+
+    #TODO if [ ! -d /mnt/caladan/Desktop ] ; then
+    #TODO     mount /mnt/caladan &
+    #TODO fi
+fi
