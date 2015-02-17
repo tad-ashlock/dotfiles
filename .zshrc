@@ -67,6 +67,10 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source ~/.zsh/plugins/opp.zsh/opp.zsh
 source ~/.zsh/plugins/opp.zsh/opp/*.zsh
 
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

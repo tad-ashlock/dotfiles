@@ -34,3 +34,4 @@
 !/.zsh/
 !/.zsh/plugins
 !/.zsh/plugins/opp.zsh
+!/.zsh/plugins/zsh-history-substring-search
