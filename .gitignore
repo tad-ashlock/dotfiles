@@ -3,10 +3,8 @@
 
 # But not these files...
 !/.aspell.en.prepl
+!/.aspell.en.pws
 !/.bashrc
-!/dict/
-!/dict/en.prepl
-!/dict/en.pws
 !/.dircolors
 !/.dmrc
 !/.gitconfig
