@@ -1,4 +1,4 @@
-personal_ws-1.1 en 630 
+personal_ws-1.1 en 631 
 NDELAY
 crosshairs
 Google
@@ -113,6 +113,7 @@ ICD
 FlightPlanID
 amongst
 mutex
+constexpr
 IAR
 RcStatusPassDataArgs
 Ebert
@@ -194,8 +195,8 @@ semop
 RcStatusHeartbeatArgs
 memset
 csignal
-blog
 argv
+blog
 uint
 widescreen
 szFileName
@@ -302,8 +303,8 @@ proven
 clnt
 PIR
 this'd
-OOP
 QEP
+OOP
 init
 iDataID
 SetConfigArgs
@@ -326,8 +327,8 @@ SIGBUS
 IPEN
 ifndef
 substates
-OUO
 pre
+OUO
 qassert
 SAR
 GndStatusApertureDataArgs
@@ -500,8 +501,8 @@ SIGXFSZ
 BP
 vertices
 Simpsons
-waypoints
 waypoint's
+waypoints
 mainpage
 xmlSAXUserParseMemory
 PassBegin
