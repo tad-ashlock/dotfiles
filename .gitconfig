@@ -10,3 +10,5 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
 [include]
 	path = ~/.gitconfig.local
+[commit]
+	template = /home/taashlo/.git-commit-template.txt
