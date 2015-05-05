@@ -67,9 +67,31 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source ~/.zsh/plugins/opp.zsh/opp.zsh
 source ~/.zsh/plugins/opp.zsh/opp/*.zsh
 
+# The following configuration allows for searching the history for a substring.
+# Additionally, the 'k' and 'j' keys will only search for history local to that
+# terminal session.  While the 'K' and 'J' keys will search the global history.
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
+bindkey -M vicmd 'K' history-substring-search-up
+bindkey -M vicmd 'J' history-substring-search-down
+
+function only-local-history-substring-search-up ()
+{
+    zle set-local-history 1
+    zle history-substring-search-up
+    zle set-local-history 0
+}
+function only-local-history-substring-search-down ()
+{
+    zle set-local-history 1
+    zle history-substring-search-down
+    zle set-local-history 0
+}
+zle -N only-local-history-substring-search-up
+zle -N only-local-history-substring-search-down
+
+bindkey -M vicmd 'k' only-local-history-substring-search-up
+bindkey -M vicmd 'j' only-local-history-substring-search-down
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
