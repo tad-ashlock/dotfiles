@@ -4,7 +4,7 @@ autoload -Uz promptinit
 promptinit
 prompt adam2 8bit
 
-setopt hist_ignore_all_dups sharehistory
+setopt hist_ignore_all_dups share_history
 setopt extended_glob
 
 # Use vi keybindings
