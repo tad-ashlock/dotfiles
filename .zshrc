@@ -105,3 +105,5 @@ alias rm='echo "This is not the command you are looking for."; false'
 if [[ -f ~/.sh_sys_config ]]; then
     . ~/.sh_sys_config
 fi
+
+. ~/z.sh
