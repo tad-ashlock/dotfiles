@@ -99,6 +99,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias parallel='parallel --gnu '
 
+# Use 'trash' instead of 'rm' to delete files
+alias rm='echo "This is not the command you are looking for."; false'
 
 if [[ -f ~/.sh_sys_config ]]; then
     . ~/.sh_sys_config
