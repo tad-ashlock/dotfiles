@@ -12,3 +12,5 @@
 	path = ~/.gitconfig.local
 [commit]
 	template = /home/taashlo/.git-commit-template.txt
+[merge]
+	conflictstyle = diff3
