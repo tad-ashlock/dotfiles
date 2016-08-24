@@ -1,5 +1,5 @@
 rudeness 12
-bind l exec i3lock -du -c 000000
+bind l exec /usr/bin/xscreensaver-command -lock
 
 warp off
 startup_message off
