@@ -1,4 +1,4 @@
-personal_ws-1.1 en 636 
+personal_ws-1.1 en 645 
 NDELAY
 crosshairs
 Google
@@ -67,6 +67,7 @@ forwards
 sourballs
 IRGRP
 setsockopt
+Sandia
 determinist
 keratotomy
 MMMM
@@ -79,6 +80,7 @@ speakerphone
 flyers
 nerdvana
 PORTDbits
+PIDAS
 unibrow
 strcat
 superloop
@@ -224,6 +226,7 @@ toolset
 combover
 NCD
 DEFS
+performant
 codomain
 VERS
 airtime
@@ -290,6 +293,7 @@ MSP
 dValue
 sheetrock
 strlen
+pluggable
 DirectDetect
 TADTEST
 PHG
@@ -297,6 +301,7 @@ holodeck
 inet
 SETFL
 EPROMS
+wirelessly
 statecharts
 fcntl
 checkword
@@ -308,6 +313,7 @@ this'd
 QEP
 OOP
 init
+scalable
 cubera
 iDataID
 SetConfigArgs
@@ -381,6 +387,7 @@ ascii
 IRUSR
 ctime
 QFsm
+topologies
 gimbal
 ponzi
 Rehydrate
@@ -474,6 +481,7 @@ GETFL
 cstdio
 tcflag
 FIXME
+optimizations
 OSCCON
 endElement
 cstdlib
@@ -497,8 +505,9 @@ wiseguy
 alloc
 lightbulb
 strtod
+interoperability
 unfulfilling
-Microcontroller
+microcontroller
 PROG
 when's
 SIGXFSZ
@@ -599,6 +608,7 @@ lightbulbs
 svcudp
 sigs
 XP
+interoperable
 OPOST
 vsprintf
 showerhead
