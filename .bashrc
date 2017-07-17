@@ -117,8 +117,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 set -o vi
-
+bind -m vi 'k: history-substring-search-backward'
+bind -m vi 'j: history-substring-search-forward'
+bind -m vi '"\C-f": shell-expand-line'
+bind -m vi-insert '"\C-f": shell-expand-line'
 
 if [ -f ~/.sh_sys_config ]; then
     . ~/.sh_sys_config
+fi
+
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+fi
+
+if [ -f ~/.bash_log ]; then
+    . ~/.bash_log
 fi
