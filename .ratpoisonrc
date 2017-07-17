@@ -1,4 +1,5 @@
 rudeness 12
+exec /usr/bin/xscreensaver
 bind l exec /usr/bin/xscreensaver-command -lock
 
 warp off

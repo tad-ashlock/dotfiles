@@ -246,7 +246,7 @@ programs:								      \
 				unicode -root				    \n\
 
 
-pointerPollTime:    1:00:05
+pointerPollTime:    0:00:05
 pointerHysteresis:  10
 windowCreationTimeout:0:00:30
 initialDelay:	0:00:00
