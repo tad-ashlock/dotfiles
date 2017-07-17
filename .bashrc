@@ -94,6 +94,9 @@ fi
 
 alias less='less -R'
 
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -124,6 +127,14 @@ bind -m vi-insert '"\C-f": shell-expand-line'
 
 if [ -f ~/.sh_sys_config ]; then
     . ~/.sh_sys_config
+fi
+
+# append each command to the history
+if [ -z "$PROMPT_COMMAND" ]
+then
+    PROMPT_COMMAND="history -a"
+else
+    PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 fi
 
 if [ -f ~/.bash_prompt ]; then

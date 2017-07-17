@@ -162,6 +162,12 @@ DIR 36
 # symbolic link
 LINK 35
 
+OTHER_WRITABLE 1;31
+# SETGID                48;5;3;38;5;0
+# SETUID                38;5;220;1;3;100;1
+# STICKY                38;5;86;48;5;234
+# STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
+
 # pipe, socket, block device, character device (blue bg)
 FIFO 30;44
 SOCK 35;44

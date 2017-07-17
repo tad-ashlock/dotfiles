@@ -8,6 +8,7 @@
 	default = simple
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ls = log --reverse --color --pretty=format:'%Cred%h%Creset - %s' --abbrev-commit
 [include]
 	path = ~/.gitconfig.local
 [commit]
@@ -16,3 +17,6 @@
 	conflictstyle = diff3
 [diff]
 	#compactionHeuristic = true
+[difftool]
+        # Be able to abort all diffs with `:cq` or `:cquit`
+        trustExitCode = true
