@@ -144,3 +144,7 @@ fi
 if [ -f ~/.bash_log ]; then
     . ~/.bash_log
 fi
+
+export PATH=$PATH:~/workspace/git-tut:~/workspace/git-walk
+
+export EXF_BROKER=tcp://127.0.0.1:5665
